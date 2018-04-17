@@ -1,7 +1,42 @@
+#header > div:first-child{
+	width: 100px;
+	float: left;
+	background-color: #c1d19c;
+}
+
+#menu_icon > div{
+	width: 32px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+#header > div:nth-child(2){
+	margin-left: 100px;
+	background-color: #93ba39;
+}
+
+
+
+/*Give credit*/
 .cell{
 	height:300px;
 	width:300px;
 	background-color: #16823f;
+     -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.cell:hover{
+    position: relative;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 1000;
 }
 
 .img{
