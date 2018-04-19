@@ -1,28 +1,77 @@
-#header > div:first-child{
-	width: 100px;
-	float: left;
-	background-color: #c1d19c;
+html{
+	background-color: #AD9E9B;
 }
 
-#menu_icon > div{
-	width: 32px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
+.title{ 
+	position: relative;
 }
 
-#header > div:nth-child(2){
-	margin-left: 100px;
-	background-color: #93ba39;
+.name{
+	font-family: Verdana;
+    font-weight: bolder;
+    font-size: 45px;
+    text-align: center;
+    margin: 0;
+    padding: 100px;
+    color: #EDF5E0;
+    font-size: 50px;
+    letter-spacing: 4px;
+   	text-shadow: 0 0 1px rgba(237, 245, 224,0.5);
 }
 
+#navigation{
+	text-align: right;
+	letter-spacing: 2px;
+}
+
+#navigation > a{
+	position: relative;
+	font-family: Verdana;
+	font-style: italic;
+	font-weight: bolder;
+	color: #05396B;
+	text-decoration: none;
+	font-size: 10px;
+}
+
+#navigation > a:hover{
+	color: #05396B;
+}
+
+#navigation > a:before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: -3px;
+	left: 0;
+	background-color: #05396B;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+#navigation > a:hover:before{
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+#item_list{
+	margin: auto;
+	width: 1000px;
+}
 
 
 /*Give credit*/
 .cell{
+	display: inline-block;
+	padding: 10px;
 	height:300px;
 	width:300px;
-	background-color: #16823f;
+	/*background-color: #16823f;*/
      -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -56,33 +105,35 @@ img{
 	max-height:auto;
 }
 
-
-.product_name{
+.cell > p{
 	position: relative;
 	top: 2%;
     padding:0;
     margin:0;
+    text-align: center;
+    color: #05396B;
+}
+
+
+.product_name{
+	font-weight: bolder;
 }
 
 .product_category{
-	position: relative;
-	top: 2%;
-    padding:0;
-    margin:0;
     font-style: italic;
+    font-weight: 100;
+    font-size: 15px;
 }
 
 .product_price{
-	position: relative;
+	font-size: 15px;
 	top: 3%;
-    padding:0;
-    margin:0;
 }
 
-.product_info{
+/*.product_info{
     padding:0
     margin:0;
-	background-color: #b6b759;
+	background-color: #2E240E;
 	height: 15%;
 	width: 100%;
 }
@@ -90,4 +141,4 @@ img{
 a:link, a:visited{
 	text-decoration: none;
 	color: #000000;
-}
+}*/
