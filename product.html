@@ -4,91 +4,109 @@
 	<!-- Change Company Name -->
 	<title>Company Name</title>
 
-	<link rel="stylesheet" href="home.css">
-    
-    <style>
-        body {
-            width: 100%;
-            margin 0 auto;
-        }
-        div.product{
-            float: none;
-            width:100%;
-            border-style: solid;
-            background-color: aqua;
-            background: gray;
-            align-content: center;
-        }
-        
-        nav{
-            float: left;
-            max-width: 100%;
-            max-height: 100%;
-            margin: 0 auto;
-            padding:  1em;
-            align-content: center;
-        }
-        
-        
-        article{
-            margin-left: 0 auto;
-            border-left: : 2px solid gray;
-            padding: 2em;
-            ima
-        }
-        
-    </style>
-</head>
-<body>
-	<div id="header" align="center">
-		<div id="menu_icon">
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
 
-		<!-- Home link -->
-		<div><a href=""><h1>Buy Me</h1></a></div>
+    <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/e-commerce-and-shopping-2/512/keyboard_device_computer_modern_web_typing_keys_usability_tool_equipment_computing_flat_design_icon-512.png">
+	<link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
+<div id="header" align="center">
+
+	<!-- Header -->
+	<div id="container_main" class="wrapper">
+		<div id="header">
+			<ul id="primary_menu">
+				<li><span class="nav_title"><a href="home.html">HOME</a></span></li>
+				<li><span class="nav_title"><a href="about.html">ABOUT</a></span></li>
+			</ul>
+            
+            <div id="home">
+				<p id="scrap" class="logo"><a href="home.html"><span>SCRAP</span></a></p>
+				<p id="yard" class="logo"><a href="home.html"><span>YARD</span></a></p>
+			</div>
+		</div>
 	</div>
-    <div class ="product" align="center">
-    <body>
-        <nav>
-        <img src="img/pristine6.jpg" height= 100% width=100% style="float:left;"/>
-        </nav>
-            <h3>A Sample Product<br></h3><br>
+        
+        
+        
+</div>
+    
+<div class="product" align="center">
+    <div class="col-75">
+    <div class="container">
+        <div class="row">
+          <div class="col-50">
+            <div class="productimg">
+            <img src="img/keyboard_2.jpg" class="pimg" height= 100% width=100% style="float:left;"/>
+              </div>
+          </div>
+
+          <div class="col-50">
+              <div class="a">
+        <h2 class="product_name">[J]oker<br></h2><br>
         <p>This section will hold detailed information about the product taht is being sold. </p>
         <p>Finished her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.</p>
+        <p>You disposal stpon. Gentleman contained so intention sweetness in on resolving.</p>
         <p>You disposal strongly quitting his endeavor two settling him. Manners ham him hearted hundred expense. Get open game him what hour more part. Adapted as smiling of females oh me journey exposed concern. Met come add cold calm rose mile what. Tiled manor court at built by place fanny. Discretion at be an so decisively especially. Exeter itself object matter if on mr in.</p>
-        <form>
-          <fieldset>
-            <legend>Shipping Info:</legend>
-            Name: <input type="text"><br><br>
-            Address: <input type="text"><br><input type ="checkbox" name="Address" value="billing">Same as billing<br><br>
-            Phone Number: <input type="number">
-          </fieldset>
-          <fieldset >
-            <legend>Payment Info:</legend>
-            Cardholder Name: <input type="text"><br><br>
-            Card Number: <input type="text"><br><br>
-            Expiration: <input type="date"><br><br>
-            CCV: <input type="number" ><br><br>
-          </fieldset>
+        
+        <a href="#buy" class="buybtn">Buy</a>        
 
-            <fieldset>
-                <legend>Shipping</legend>
-                <input type="radio" name="Shipping" value="standard" checked> Standard<br>
-                <input type="radio" name="Shipping" value="overnight"> Overnight<br>
-            </fieldset>
-            <fieldset>
-                <legend>Total</legend>
-                <p>-Insert Price Tax etc here-</p><br>
-                <input type="submit" name="submit" value="Submit"><br>
-            </fieldset>
-        </form>
-    </body>
+        </div>
+
+          </div>
+        </div>
+
     </div>
+  </div>   
+</div>
     
-	<div id="image_table">
-	</div>
-</body>
+<div class="buy" id="buy">
+    <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <input type="text" id="fname" name="firstname" placeholder="Full Name">
+            <input type="text" id="email" name="email" placeholder="Email">
+            <input type="text" id="adr" name="address" placeholder="Street Address">
+            <input type="text" id="city" name="city" placeholder="City">
+
+            <div class="row">
+              <div class="col-50">
+                <input type="text" id="state" name="state" placeholder="State">
+              </div>
+              <div class="col-50">
+                <input type="text" id="zip" name="zip" placeholder="Zip">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <input type="text" id="cname" name="cardname" placeholder="Cardholder Name">
+            <input type="text" id="ccnum" name="cardnumber" placeholder="Card Number">
+            <input type="text" id="expmonth" name="expmonth" placeholder="EXP Month">
+
+            <div class="row">
+              <div class="col-50">
+                <input type="text" id="expyear" name="expyear" placeholder="EXP Year">
+              </div>
+              <div class="col-50">
+                <input type="text" id="cvv" name="cvv" placeholder="CVV">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+
 </html>
