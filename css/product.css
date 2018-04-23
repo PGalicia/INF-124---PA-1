@@ -25,6 +25,8 @@ div.product{
     min-height: 800px;
     min-width: 800px; */  
     width: 60%;
+    max-height: 800px;
+    max-width: 900px;
     padding-right: 2.5em;
     padding-bottom: 2.5em;
     float: left;
