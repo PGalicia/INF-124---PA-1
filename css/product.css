@@ -190,9 +190,9 @@ span.price {
 }
 
 input:invalid {
-  border: 2px solid red;
+  border: 2px solid lightgray;
 }
 
 input:valid {
-  border: 2px solid black;
+  border: 2px solid lightgreen;
 }
