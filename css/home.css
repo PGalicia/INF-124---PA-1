@@ -132,6 +132,10 @@ body, html {
 	justify-content: flex-start;
 }
 
+#container_items a{
+	text-decoration: none;
+}
+
 .cell{
 	padding: 10px;
 	height:300px;
