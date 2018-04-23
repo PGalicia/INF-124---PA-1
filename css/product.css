@@ -45,7 +45,7 @@ div.product{
 .a .product_name{ font-size: 2em; }
 .a .product_category, .a .product_price{ font-size: 1.1em; }
 .category_title{ font-weight: bolder; color: rgb(89, 89, 166); }
-.a #product_quote{ font-style: italic; font-weight: lighter; color: rgb(77, 77, 77); font-size: 1.2em; padding-left: 75%; padding-top: 1%; padding-bottom: 1%;}
+.a #product_quote{ font-style: italic; font-weight: lighter; color: rgb(77, 77, 77); font-size: 1.2em; padding-left: 70%; padding-top: 1%; padding-bottom: 1%;}
 
 
 
