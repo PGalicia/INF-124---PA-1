@@ -149,6 +149,11 @@
                 var y = document.getElementById("shipping_information");
                 if(x.checked === true){
                     y.style.display = "none";
+                    document.getElementById("fname_ship").value = "";
+                    document.getElementById("adr_ship").value = "";
+                    document.getElementById("city_ship").value = "";
+                    document.getElementById("state_ship").value = "";
+                    document.getElementById("zip_ship").value = "";
                 } else {
                     y.style.display = "block";
                 }
