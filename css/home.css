@@ -13,6 +13,13 @@ body, html {
 	padding-top: 3em;
 }
 
+.wrapper{	
+	max-width: 90%;
+	margin: 0 auto;
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}
+
 /*Navigation------------------------------------------*/
 
 #container_main > #header{

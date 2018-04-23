@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Change Company Name -->
-	<title>Company Name</title>
-
+    <title>The Yard</title>
 
     <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/e-commerce-and-shopping-2/512/keyboard_device_computer_modern_web_typing_keys_usability_tool_equipment_computing_flat_design_icon-512.png">
 	<link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/product.css">
+
 </head>
     
 	<!-- Header -->
@@ -23,10 +22,46 @@
 					<p id="yard" class="logo"><a href="home.html"><span>YARD</span></a></p>
 			</div>
 		</div>
+
+        <div class="product">
+            <div class="productimg">
+                <img src="img/keyboard_2.jpg">
+            </div>
+            <div class="a">
+                <p class="product_name">[J]oker</p>
+                <p class="product_category">Villain</p>
+                <p class="product_price">$ 1,000,000.00</p>
+                <p id="product_quote" class="product_specs">"Why so serious?"</p>
+                <p id="product_color" class="product_specs"><span class="category_title">Color:</span> color1, color2, color3</p>
+                <p id="product_connection" class="product_specs"><span class="category_title">Connection:</span> Wired/Wireless/Both</p>
+                <p id="product_dimensions" class="product_specs"><span class="category_title">Dimension:</span> 10 inch x 10 inch x 10 inch</p>
+                <p id="product_weight" class="product_specs"><span class="category_title">Weight:</span> 10 oz</p>
+                <p id="product_description" class="product_specs">This is the description. 3 sentences max</p>
+
+                <!-- <a href="#buy" class="buybtn"><div>Buy</div></a> -->
+                <button onclick="togglePayment()" id="buybtn">Buy</button>
+
+            </div>
+        </div>
 	</div>
+
+
+    <script>
+        function togglePayment() {
+            var x = document.getElementById("buy");
+            if (x.style.display && x.style.display !== "none") {
+                x.style.display = "none";
+                document.getElementById("buybtn").innerHTML = "Buy"
+            } else {
+                document.getElementById("buybtn").innerHTML = "Cancel"
+                x.style.display = "block";
+                window.scrollBy(0, 500);
+            }
+        }
+    </script>
     
-<div class="product" align="center">
-    <div class="col-75">
+<!-- <div class="product" align="center">
+    <div class="col-10">
     <div class="container">
         <div class="row">
           <div class="col-50">
@@ -52,12 +87,12 @@
 
     </div>
   </div>   
-</div>
+</div> -->
     
-<div class="buy" id="buy">
+<div class="wrapper" id="buy">
     <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
+      <!-- <form action="/action_page.php"> -->
 
         <div class="row">
           <div class="col-50">
@@ -98,7 +133,7 @@
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
         <input type="submit" value="Continue to checkout" class="btn">
-      </form>
+      <!-- </form> -->
     </div>
   </div>
 </div>
