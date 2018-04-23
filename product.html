@@ -131,9 +131,50 @@
         </div>
 
         </div>
+
+            
+        <h3>Shipping</h3>
+        <input type="radio" id="shipping" name="shipping"><b>Standard Shipping</b> <!-- <span style="font-style:italic;">(free)</span> -->
+        <p style="color: rgb(128, 128, 128, 0.8); margin: 0; padding: 0 0 0.5em 1.2em;">5 - 7 Business Days | Free</p>
+        <input type="radio" id="shipping" name="shipping"><b>Express Shipping</b>
+        <p style="color: rgb(128, 128, 128, 0.8); margin: 0; padding: 0 0 0.5em 1.2em;">2 - 3 Business Days | + $10.00</p>
         <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+          <input type="checkbox" id="address_check" checked="checked" name="sameadr" onchange="toggleShipping()"> Shipping address same as billing
         </label>
+
+        <script>
+            function toggleShipping(){
+                var x = document.getElementById("address_check");
+                var y = document.getElementById("shipping_information");
+                if(x.checked === true){
+                    y.style.display = "none";
+                } else {
+                    y.style.display = "block";
+                }
+            }
+        </script>
+
+        <div class="row" id="shipping_information">
+          <div class="col-50">
+            <h3>Shipping Address</h3>
+            <input type="text" id="fname_ship" name="firstname" placeholder="Full Name">
+            <input type="text" id="adr_ship" name="address" placeholder="Street Address">
+            <input type="text" id="city_ship" name="city" placeholder="City">
+
+            <div class="row">
+              <div class="col-50">
+                <input type="text" id="state_ship" name="state" placeholder="State">
+              </div>
+              <div class="col-50">
+                <input type="text" id="zip_ship" name="zip" placeholder="Zip">
+              </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
         <input type="submit" value="Continue to checkout" class="btn">
       </form>
     </div>

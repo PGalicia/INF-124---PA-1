@@ -188,3 +188,5 @@ span.price {
   float: right;
   color: grey;
 }
+
+#shipping_information{ display: none; }
