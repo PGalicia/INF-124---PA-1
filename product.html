@@ -44,108 +44,78 @@
         </div>
 	</div>
     
-<!-- <div class="product" align="center">
-    <div class="col-10">
-    <div class="container">
-        <div class="row">
-          <div class="col-50">
-            <div class="productimg">
-            <img src="img/keyboard_2.jpg" class="pimg" height= 100% width=100% style="float:left;"/>
-              </div>
-          </div>
-
-          <div class="col-50">
-              <div class="a">
-        <h2 class="product_name">[J]oker<br></h2><br>
-        <p>This section will hold detailed information about the product taht is being sold. </p>
-        <p>Finished her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.</p>
-        <p>You disposal stpon. Gentleman contained so intention sweetness in on resolving.</p>
-        <p>You disposal strongly quitting his endeavor two settling him. Manners ham him hearted hundred expense. Get open game him what hour more part. Adapted as smiling of females oh me journey exposed concern. Met come add cold calm rose mile what. Tiled manor court at built by place fanny. Discretion at be an so decisively especially. Exeter itself object matter if on mr in.</p>
-        
-        <a href="#buy" class="buybtn">Buy</a>        
-
-        </div>
-
-          </div>
-        </div>
-
-    </div>
-  </div>   
-</div> -->
-    
 <div class="wrapper" id="buy">
     <div class="col-75">
         <div class="container">
-          <!-- <form action="/action_page.php"> -->
-        <!-- After completing the form, launch email client to with Subject, Body, and Email filled out -->
-        <form action="mailto:someone@example.com?Subject=Order%20Confirmation" method="post" enctype="text/plain">
+            <!-- After completing the form, launch email client to with Subject, Body, and Email filled out -->
+            <form action="mailto:someone@example.com?Subject=Order%20Confirmation" method="post" enctype="text/plain" id="payment_form">
 
-            <div class="row">
-                <div class="col-50">
-                    <h3>Billing Address</h3>
-                    <input type="text" id="fname" name="firstname" placeholder="Full Name" required pattern="[a-zA-Z ]*$">
-                    <input type="text" id="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                    <input type="text" id="adr" name="address" placeholder="Street Address" required>
-                    <input type="text" id="city" name="city" placeholder="City" required pattern="[a-zA-z ]*$">
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Billing Address</h3>
+                        <input type="text" id="fname" name="firstname" placeholder="Full Name" required pattern="[a-zA-Z ]*$">
+                        <input type="text" id="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" onchange="updateEmail()">
+                        <input type="text" id="adr" name="address" placeholder="Street Address" required>
+                        <input type="text" id="city" name="city" placeholder="City" required pattern="[a-zA-z ]*$">
 
-                    <div class="row">
-                        <div class="col-50">
-                            <input type="text" id="state" name="state" placeholder="State" required pattern="[a-zA-Z]{2}" minlength="2" maxlength="2">
+                        <div class="row">
+                            <div class="col-50">
+                                <input type="text" id="state" name="state" placeholder="State" required pattern="[a-zA-Z]{2}" minlength="2" maxlength="2">
+                            </div>
+                            <div class="col-50">
+                                <input type="text" id="zip" name="zip" placeholder="Zip" required pattern="[0-9]{5}" minlength-"5" maxlength="5">
+                            </div>
                         </div>
-                        <div class="col-50">
-                            <input type="text" id="zip" name="zip" placeholder="Zip" required pattern="[0-9]{5}" minlength-"5" maxlength="5">
+                    </div>
+
+                    <div class="col-50">
+                        <h3>Payment</h3>
+                        <input type="text" id="cname" name="cardname" placeholder="Cardholder Name" required pattern="[a-zA-Z ]*$">
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="Card Number" required pattern="[0-9]{16}" minlength="16" maxlength="16">
+                        <input type="text" id="expmonth" name="expmonth" placeholder="EXP Month" required pattern="[0-9]{1,2}" minlength="1" maxlength="2">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <input type="text" id="expyear" name="expyear" placeholder="EXP Year" required pattern="[0-9]{4}" minlength="4" maxlength="4">
+                            </div>
+                            <div class="col-50">
+                                <input type="text" id="cvv" name="cvv" placeholder="CVV" required pattern="[0-9]{3}" minlength="3" maxlength="3">
+                            </div>
+                        </div>
+                        <input type="text" id="quantity" name="quantity" placeholder="Quantity" required pattern="[0-9]{1,2}" minlength="1" maxlength="2">
+                    </div>
+                </div>
+                    
+                <h3>Shipping</h3>
+                <input type="radio" id="shipping" name="shipping" required><b>Standard Shipping</b>
+                <p style="color: rgb(128, 128, 128, 0.8); margin: 0; padding: 0 0 0.5em 1.2em;">5 - 7 Business Days | Free</p>
+                <input type="radio" id="shipping" name="shipping"><b>Express Shipping</b>
+                <p style="color: rgb(128, 128, 128, 0.8); margin: 0; padding: 0 0 0.5em 1.2em;">2 - 3 Business Days | + $10.00</p>
+
+                <label>
+                  <input type="checkbox" id="address_check" checked="checked" name="sameadr" onchange="toggleShipping()"> Shipping address same as billing
+                </label>
+
+                <div class="row" id="shipping_information">
+                    <div class="col-50">
+                        <h3>Shipping Address</h3>
+                        <input type="text" id="fname_ship" name="firstname" placeholder="Full Name" pattern="[a-zA-Z ]*$">
+                        <input type="text" id="adr_ship" name="address" placeholder="Street Address" >
+                        <input type="text" id="city_ship" name="city" placeholder="City" pattern="[a-zA-z ]*$">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <input type="text" id="state_ship" name="state" placeholder="State" pattern="[a-zA-Z]{2}" minlength="2" maxlength="2">
+                            </div>
+                            <div class="col-50">
+                                <input type="text" id="zip_ship" name="zip" placeholder="Zip" pattern="[0-9]{5}" minlength-"5" maxlength="5">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-50">
-                    <h3>Payment</h3>
-                    <input type="text" id="cname" name="cardname" placeholder="Cardholder Name" required pattern="[a-zA-Z ]*$">
-                    <input type="text" id="ccnum" name="cardnumber" placeholder="Card Number" required pattern="[0-9]{16}" minlength="16" maxlength="16">
-                    <input type="text" id="expmonth" name="expmonth" placeholder="EXP Month" required pattern="[0-9]{1,2}" minlength="1" maxlength="2">
-
-                    <div class="row">
-                        <div class="col-50">
-                            <input type="text" id="expyear" name="expyear" placeholder="EXP Year" required pattern="[0-9]{4}" minlength="4" maxlength="4">
-                        </div>
-                        <div class="col-50">
-                            <input type="text" id="cvv" name="cvv" placeholder="CVV" required pattern="[0-9]{3}" minlength="3" maxlength="3">
-                        </div>
-                    </div>
-                    <input type="text" id="quantity" name="quantity" placeholder="Quantity" required pattern="[0-9]{1,2}" minlength="1" maxlength="2">
-                </div>
-            </div>
-                
-            <h3>Shipping</h3>
-            <input type="radio" id="shipping" name="shipping" required><b>Standard Shipping</b>
-            <p style="color: rgb(128, 128, 128, 0.8); margin: 0; padding: 0 0 0.5em 1.2em;">5 - 7 Business Days | Free</p>
-            <input type="radio" id="shipping" name="shipping"><b>Express Shipping</b>
-            <p style="color: rgb(128, 128, 128, 0.8); margin: 0; padding: 0 0 0.5em 1.2em;">2 - 3 Business Days | + $10.00</p>
-
-            <label>
-              <input type="checkbox" id="address_check" checked="checked" name="sameadr" onchange="toggleShipping()"> Shipping address same as billing
-            </label>
-
-            <div class="row" id="shipping_information">
-                <div class="col-50">
-                    <h3>Shipping Address</h3>
-                    <input type="text" id="fname_ship" name="firstname" placeholder="Full Name" pattern="[a-zA-Z ]*$">
-                    <input type="text" id="adr_ship" name="address" placeholder="Street Address" >
-                    <input type="text" id="city_ship" name="city" placeholder="City" pattern="[a-zA-z ]*$">
-
-                    <div class="row">
-                        <div class="col-50">
-                            <input type="text" id="state_ship" name="state" placeholder="State" pattern="[a-zA-Z]{2}" minlength="2" maxlength="2">
-                        </div>
-                        <div class="col-50">
-                            <input type="text" id="zip_ship" name="zip" placeholder="Zip" pattern="[0-9]{5}" minlength-"5" maxlength="5">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <input type="submit" value="Continue to checkout" class="btn">
-          </form>
+                <input type="submit" value="Continue to checkout" class="btn">
+            </form>
         </div>
     </div>
 </div>
@@ -168,18 +138,23 @@
     }
 
 
-// When the BUY button is pressed, display BUY div
-function togglePayment() {
-    var x = document.getElementById("buy");
-    if (x.style.display && x.style.display !== "none") {
-        x.style.display = "none";
-        document.getElementById("buybtn").innerHTML = "Buy"
-    } else {
-        document.getElementById("buybtn").innerHTML = "Cancel"
-        x.style.display = "block";
-        window.scrollBy(0, 500);
+    // When the BUY button is pressed, display BUY div
+    function togglePayment() {
+        var x = document.getElementById("buy");
+        if (x.style.display && x.style.display !== "none") {
+            x.style.display = "none";
+            document.getElementById("buybtn").innerHTML = "Buy";
+        } else {
+            document.getElementById("buybtn").innerHTML = "Cancel";
+            x.style.display = "block";
+            window.scrollBy(0, 500);
+        }
     }
-}
+
+    // When user inputs email, update <form>
+    function updateEmail(){
+        document.getElementById("payment_form").action = "mailto:" + document.getElementById("email").value + "?Subject=Order%20Confirmation";
+    }
     
 </script>
 
