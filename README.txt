@@ -1,21 +1,21 @@
 Group Members:
   - Patrick Galicia (ID# 61968926)
-  - Raj Robin (ID# )
+  - Raj Robin (ID# 30492300)
 
 URL:
 
 Navigation:
   When you access the homepage, you see three links above: the logo, HOME button, and ABOUT button. Both the logo
-and the HOME button will lead the homepage, while ABOUT will lead users to our ABOUT page. Scrolling down will lead
+and the HOME button will lead to the homepage, while ABOUT will lead users to our ABOUT page. Scrolling down will lead
 users to our list of products, each products are clickable and when pressed it will lead you to the product's
 corresponding product page where you have the option to buy the product. In the product page, when you clicked BUY
 text fields will appear where users can input info to buy the product. Completing the order will launch the user's
 email client.
   
 Requirements: 
-1. An overview of your business, the products you sell, the management team, and any other information that you 
-   think makes sense for the customers to know about your company.
-	- You can see an overview of our company on our ABOUT page, which includes the management team, and
+1. An overview of your business, the products you sell, the management team, and any other information that you think makes sense for the customers to know about your company.
+	- You can see an overview of our company on our ABOUT page, which includes the    
+      management team, and
 	  the products we sell.
 
 2. Display a list of products (at least 10) available for sale in a table with multiple rows and column, where 
@@ -56,7 +56,7 @@ Requirements:
 8. Before submitting the form, it should be checked for proper formatting, including whether all fields are 
    filled properly, whether the phone number, address, and credit card are properly formatted, etc. An alarm 
    should be raised if a field is empty or not properly formatted to prevent submission of bad data. 
-	- Each input fields on the product page, wil check for proper formatting:
+	- Each input fields on the product page, wil check for proper formatting. If the information entered is in the valid format, there will be a green border:
 		- NAMES (Full Name and Cardholder Name): Checks that each characters are valid
 		  letters.
 		- EMAIL: Checks to see that the inputted text follow the email
