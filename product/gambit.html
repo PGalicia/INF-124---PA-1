@@ -48,13 +48,13 @@
         <div class="col-75">
             <div class="container">
                 <!-- After completing the form, launch email client to with Subject, Body, and Email filled out -->
-                <form action="mailto:someone@example.com?Subject=Order%20Confirmation" method="post" enctype="text/plain">
+                <form action="mailto:someone@example.com?Subject=Order%20Confirmation" method="post" enctype="text/plain" id="payment_form">
 
                     <div class="row">
                         <div class="col-50">
                             <h3>Billing Address</h3>
                             <input type="text" id="fname" name="firstname" placeholder="Full Name" required pattern="[a-zA-Z ]*$">
-                            <input type="text" id="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            <input type="text" id="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" onchange="updateEmail()">
                             <input type="text" id="phone" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" minlength="10" maxlength="10">
                             <input type="text" id="adr" name="address" placeholder="Street Address" required>
                             <input type="text" id="city" name="city" placeholder="City" required pattern="[a-zA-z ]*$">
@@ -151,7 +151,11 @@
                 window.scrollBy(0, 500);
             }
         }
-        
+       
+        // When user inputs email, update <form>
+        function updateEmail(){
+            document.getElementById("payment_form").action = "mailto:" + document.getElementById("email").value + "?Subject=Order%20Confirmation";
+        } 
     </script>
 
 </html>
