@@ -2,7 +2,7 @@ Group Members:
   - Patrick Galicia (ID# 61968926)
   - Raj Robin (ID# 30492300)
 
-URL:
+URL: http://centaurus-2.ics.uci.edu:8927/INF-124---PA-1-master/home.html
 
 Navigation:
   When you access the homepage, you see three links above: the logo, HOME button, and ABOUT button. Both the logo
